@@ -5,3 +5,25 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Association.destroy_all
+Project.destroy_all
+Department.destroy_all
+Member.destroy_all
+
+5.times do
+	Project.create(name: Faker::Commerce.product_name, description: Faker::Lorem.paragraph)
+	Department.create(name: Faker::Commerce.department, description: Faker::Lorem.paragraph)
+	print "."
+end
+
+10.times do
+  Association.create(project_id:[1,2,3,4,5].sample, department_id: [1,2,3,4,5].sample)
+	print "."
+end
+
+50.times do
+	Member.create(name: Faker::Name.name, email: Faker::Internet.email,
+	               sex: [0,1].sample, department_id: [1,2,3,4,5].sample)
+	print "."
+end
