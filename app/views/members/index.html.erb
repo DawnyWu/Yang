@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Members</h1>
+<h1>Members</h1>
 
-<table>
+<table class="table table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -18,7 +18,11 @@
     <% @members.each do |member| %>
       <tr>
         <td><%= member.name %></td>
-        <td><%= member.sex %></td>
+        <% if member.male? %>
+          <td>Male</td>
+        <% else %>
+          <td>Female</td>
+        <% end %>
         <td><%= member.age %></td>
         <td><%= member.email %></td>
         <td><%= member.department.name %></td>

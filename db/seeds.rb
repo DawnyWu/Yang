@@ -18,7 +18,7 @@ end
 end
 
 50.times do
-	Member.create(name: Faker::Name.name, email: Faker::Internet.email,
+	Member.create(name: Faker::Name.name, email: Faker::Internet.email, age: Faker::Number.number(2),
 	               sex: [0,1].sample, department_id: [1,2,3,4,5].sample)
 	print "."
 end
