@@ -10,5 +10,20 @@
   <%= @project.description %>
 </p>
 
+	<strong>Departments:</strong>
+<p>	
+	<% @project.departments.each do |d| %>
+		<%= d.name %>
+	<% end %>
+</p>
+
+<p>
+	<% @project.departments.each do |d| %>
+		<% d.members.each do |m| %>
+			<%= m.name %>
+		<% end %>
+	<% end %>	
+</p>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

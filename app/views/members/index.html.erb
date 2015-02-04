@@ -21,7 +21,7 @@
         <td><%= member.sex %></td>
         <td><%= member.age %></td>
         <td><%= member.email %></td>
-        <td><%= member.department_id %></td>
+        <td><%= member.department.name %></td>
         <td><%= link_to 'Show', member %></td>
         <td><%= link_to 'Edit', edit_member_path(member) %></td>
         <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -22,13 +22,6 @@ ActiveRecord::Schema.define(version: 20150204035819) do
 
   add_index "associations", ["department_id", "project_id"], name: "index_associations_on_department_id_and_project_id", unique: true
 
-  create_table "department_project_relations", force: true do |t|
-    t.integer  "department_id"
-    t.integer  "project_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
   create_table "departments", force: true do |t|
     t.string   "name"
     t.text     "description"
