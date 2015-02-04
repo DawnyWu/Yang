@@ -17,7 +17,7 @@
   </div>
   <div class="form-group">
     <label for=""><%= f.label :sex %></label><br>
-    <%= f.number_field :sex, class: "form-control" %>
+    <%= f.select :sex,options_for_select([['Male', "male"], ['Femal', "female"]]), class: "form-control" %>
   </div>
   <div class="form-group">
     <label for=""><%= f.label :age %></label><br>
