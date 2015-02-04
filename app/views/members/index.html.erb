@@ -19,7 +19,7 @@
   <tbody>
     <% @members.each do |member| %>
       <tr>
-        <td><%= member.name %></td>
+        <td><%= link_to "#{member.name}", member_path(member) %></td>
         <% if member.male? %>
           <td>Male</td>
         <% else %>
@@ -27,10 +27,8 @@
         <% end %>
         <td><%= member.age %></td>
         <td><%= member.email %></td>
-        <td><%= member.department.name %></td>
-        <td><%= link_to 'Show', member %></td>
-        <td><%= link_to 'Edit', edit_member_path(member) %></td>
-        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= member.department.name %></td>    
+        <td><%= link_to 'Destroy', member, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

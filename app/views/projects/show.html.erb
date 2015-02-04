@@ -1,26 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <h4><strong>Name:</strong></h4>
   <%= @project.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+	<h4><strong>Description:</strong></h4>
   <%= @project.description %>
 </p>
 
-	<strong>Departments:</strong>
 <p>	
+	<h4><strong>Departments:</strong></h4>
 	<% @project.departments.each do |d| %>
-		<%= d.name %>
+		<%= d.name %><br>
 	<% end %>
 </p>
 
 <p>
+	<h4><strong>Members:</strong></h4>
 	<% @project.departments.each do |d| %>
 		<% d.members.each do |m| %>
-			<%= m.name %>
+			<%= m.name %><br>
 		<% end %>
 	<% end %>	
 </p>

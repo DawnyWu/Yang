@@ -22,7 +22,7 @@
 
 <p>
   <strong>Department:</strong>
-  <%= @member.department_id %>
+  <%= @member.department.name %><br>
 </p>
 
 <%= link_to 'Edit', edit_member_path(@member) %> |

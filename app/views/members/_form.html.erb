@@ -29,7 +29,8 @@
   </div>
   <div class="form-group">
     <label for=""><%= f.label :department_id %></label><br>
-    <%= f.number_field :department_id, class: "form-control" %>
+    <%#= f.number_field :department_id, class: "form-control" %>
+    <%= f.select :department_id, Department.all.collect {|d| [d.name, d.id]}%>
   </div>
   <div class="actions">
     <%= f.submit "Submit", class: "btn btn-info" %>
