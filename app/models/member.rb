@@ -1,4 +1,5 @@
 class Member < ActiveRecord::Base
+	paginates_per 10
 	enum sex: [:female, :male]
 	belongs_to :department
 	validates :name,:sex,:email, presence: true

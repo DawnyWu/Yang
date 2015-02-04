@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Members</h1>
+<h1>Members
+<%= link_to 'New Member', new_member_path, class: "btn btn-success"%>
+</h1>
 
 <table class="table table table-hover">
   <thead>
@@ -33,7 +35,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= paginate @members %>
 <br>
 
-<%= link_to 'New Member', new_member_path %>
+
